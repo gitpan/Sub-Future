@@ -1,0 +1,43 @@
+Sub-Future
+
+An implementation of futures (or promises) in Perl.  See
+http://en.wikipedia.org/wiki/Futures_and_promises for more
+details about the concept.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Data::Future
+
+You can also look for information at:
+
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Data-Future
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Data-Future
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Data-Future
+
+    Search CPAN
+        http://search.cpan.org/dist/Data-Future/
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Michael Hendricks
+
+This program is released under the following license: mit
+
