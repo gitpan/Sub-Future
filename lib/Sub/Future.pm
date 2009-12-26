@@ -20,11 +20,11 @@ BEGIN {
 
 =head1 NAME
 
-Sub::Future - concurrency with futures
+Sub::Future - asynchronous programming with futures (or promises)
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -37,14 +37,14 @@ our $VERSION = '0.02';
     # do some things that don't require $value
     # while $value is calculated in parallel
     
-    # use the computation's return value (blocking if necessary)
+    # use the computation's return value (blocks if necessary)
     print "Long computation returned: $value\n";
 
-=head1 Exported Subroutines
+=head1 EXPORTED
 
 =head2 future $coderef
 
-Starts executing C<$coderef> in parallel and then returns immediately.  The
+Starts executing C<$coderef> in parallel and returns immediately.  The
 returned value can be used at any time to retrieve the value calculated by
 C<$coderef>.  If the parallel calculation isn't done, using the value blocks
 until the value is ready.
@@ -70,7 +70,7 @@ sub future(&) {
     return bless { pid => $pid, fh => $fh }, __PACKAGE__;
 }
 
-=head1 Methods
+=head1 METHODS
 
 =head2 value
 
@@ -120,7 +120,7 @@ Please report any bugs or feature requests to C<bug-data-future at rt.cpan.org>,
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Sub-Future>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
-=head1 Version Control
+=head1 VERSION CONTROL
 
 git://github.com/mndrix/Sub-Future.git
 
@@ -130,11 +130,13 @@ You can find documentation for this module with the perldoc command.
 
     perldoc Sub::Future
 
-=head1 See Also
+=head1 SEE ALSO
 
 L<http://github.com/mndrix/Sub-Future>
 
 L<http://en.wikipedia.org/wiki/Futures_and_promises>
+
+L<threads>, L<forks>, L<subs::parallel>, L<Async>
 
 =head1 COPYRIGHT & LICENSE
 
